@@ -6,6 +6,7 @@ import com.crud.crud_basic.repositories.EmployeeRepository;
 import com.crud.crud_basic.services.EmployeeService;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -31,14 +32,14 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Employee getEmployeeById(long id) {
-//       Optional<Employee> employee = employeeRepository.findById(id);
+        //      Optional<Employee> employee = employeeRepository.findById(id);
 //       if (employee.isPresent()) {
 //           return employee.get();
 //       }else {
 //           throw new ResourceNotFoundException("Employee", "Id", id);
 //       }
 
-       return  employeeRepository.findById(id).orElseThrow(() ->
+       return employeeRepository.findById(id).orElseThrow(() ->
                new ResourceNotFoundException("Employee", "Id", id));
     }
 
@@ -63,6 +64,28 @@ public class EmployeeServiceImpl implements EmployeeService {
                 () -> new ResourceNotFoundException("Employee", "Id", id));
 
         employeeRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Employee> findByEmail(String email) {
+        // check whether employee with given email is existed or not
+        List<Employee> employees = employeeRepository.findByEmailAddress(email);
+       if (employees.size() > 0) {
+           return employees;
+       }else {
+           throw new ResourceNotFoundException("Employee", "Email", email);
+       }
+    }
+
+    @Override
+    public List<Employee> findNameByKeyword(String name) {
+        // check whether employee with given email is existed or not
+        List<Employee> employees = employeeRepository.findByName(name);
+        if (employees.size() > 0) {
+            return employees;
+        }else {
+            throw new ResourceNotFoundException("Employee", "Name", name);
+        }
     }
 
 }

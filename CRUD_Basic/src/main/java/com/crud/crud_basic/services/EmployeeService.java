@@ -10,4 +10,9 @@ public interface EmployeeService {
     Employee getEmployeeById(long id);
     Employee updateEmployee(Employee employee, long id);
     void deleteEmployee(long id);
+
+    //Queries in Repository
+    List<Employee> findByEmail(String email);
+    List<Employee> findNameByKeyword(String name);
+
 }
