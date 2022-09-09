@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -34,8 +35,8 @@ public class EmployeeController {
     //build get employee by id REST API
     //http://localhost:8080/api/employees/1
     @GetMapping("{id}")
-    public ResponseEntity<Employee> getEmployeeById(@PathVariable("id") long employeeId) {
-        return new ResponseEntity<Employee>(employeeService.getEmployeeById(employeeId), HttpStatus.OK);
+    public ResponseEntity<Employee> getEmployeeById(@PathVariable("id") long id) {
+        return new ResponseEntity<Employee>(employeeService.getEmployeeById(id), HttpStatus.OK);
     }
 
     //build update employee REST API
@@ -54,5 +55,21 @@ public class EmployeeController {
 
         return new ResponseEntity<String>("Employee deleted successfully!",HttpStatus.OK);
     }
+
+    //build find employee by email REST API
+    //http://localhost:8080/api/employees/findByEmail/vh@gmail.com
+    @GetMapping("/findByEmail/{email}")
+    public List<Employee> findByEmail(@PathVariable("email") String email) {
+        return employeeService.findByEmail(email);
+    }
+
+    //build find employee by keyword REST API
+    //http://localhost:8080/api/employees/search?keyword=vi
+    @GetMapping("/search")
+    public ResponseEntity<?> findNameByKeyword(@RequestParam(name = "keyword", required = false, defaultValue = "") String name) {
+        List<Employee> employeeList = employeeService.findNameByKeyword(name);
+        return ResponseEntity.ok(employeeList);
+    }
+
 
 }
