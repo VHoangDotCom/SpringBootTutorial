@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="ChangeListManager">
     <list default="true" id="d6dc6c41-1314-4664-a79f-b63526b604d8" name="Changes" comment="" />
+=======
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3e5aaf90-609c-484c-b3eb-bac3736c85c9" name="Changes" comment="" />
+>>>>>>> ac31ba4c0c83c3dd92c4962317cc617dab00e8af
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,31 +18,72 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+<<<<<<< HEAD
   <component name="ProjectId" id="2EcoX2pemxcwJmXPjIcJitNfJwP" />
+=======
+  <component name="ProjectId" id="2EcVO5cK69FuF8MwHRnRaIeedmV" />
+>>>>>>> ac31ba4c0c83c3dd92c4962317cc617dab00e8af
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+<<<<<<< HEAD
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+=======
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../RestAPI-ManageEmployee" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RunManager">
+    <configuration name="SchedulerSpringApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="SchedulerSpring" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.vh.schedulerspring.SchedulerSpringApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+>>>>>>> ac31ba4c0c83c3dd92c4962317cc617dab00e8af
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="d6dc6c41-1314-4664-a79f-b63526b604d8" name="Changes" comment="" />
       <created>1662904270425</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662904270425</updated>
       <workItem from="1662904271647" duration="75000" />
+=======
+      <changelist id="3e5aaf90-609c-484c-b3eb-bac3736c85c9" name="Changes" comment="" />
+      <created>1662894826690</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1662894826690</updated>
+      <workItem from="1662894828570" duration="3388000" />
+>>>>>>> ac31ba4c0c83c3dd92c4962317cc617dab00e8af
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+<<<<<<< HEAD
+=======
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+>>>>>>> ac31ba4c0c83c3dd92c4962317cc617dab00e8af
 </project>
