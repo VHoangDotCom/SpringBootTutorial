@@ -3,7 +3,7 @@
 ## Phim tat
 soutv : System.out.println
 
-## CRUD Basic - With Array List ( CRUD-ArrayList branch ) :
+## CRUD Basic - With Array List ( RestAPI-ManageEmployee ) :
 1. Dependencies:
 spring-boot-starter-web
 lombok
@@ -20,7 +20,7 @@ UserService ( interface function from ServiceImpl)
 UserServiceImpl ( execute controller )
 
 
-## CRUD Basic - With MySQL ( CRUD_MYSQL_JPA branch ):
+## CRUD Basic - With MySQL ( CRUD_Basic):
 1. Dependencies:
 Lombok
 Spring Web
@@ -65,7 +65,7 @@ Crete ServiceImpl ( trong folder ServiceImpl )
  - Co the dung method query trong repository file
 
 
-## JPA - Relational ( JPA_Relational branch ):
+## JPA - Relational ( JPA_Relational ):
 1. Dependencies:
 Lombok
 Spring Web
@@ -114,3 +114,66 @@ class StudentRepositoryTest {
 }
 ==> recommend dung Test ( bo qua cac buoc tao ham trong Service va ServiceImpl
 			dong thoi ko phai set method trong controller )
+
+6. Dinh nghia cac Annotation
+@Embeddable : annotation @Embeddable để khai báo rằng một lớp sẽ được nhúng bởi 
+các entity(Thực thể) khác.
+
+@Embeddable
+public class ContactPerson {
+
+    private String firstName;
+
+    private String lastName;
+
+    private String phone;
+
+    // standard getters, setters
+}
+
+@Embedded : Annotation @Embedded được sử dụng để khai báo rằng nhúng thực thể 
+được đánh dấu @Embeddable ở phía trên vào thực thể ở dưới đây.
+
+@Entity
+public class Company {
+    @Id   @GeneratedValue   private Integer id;
+    private String name;
+    private String address;
+    private String phone;
+    @Embedded  private ContactPerson contactPerson;
+
+    // standard getters, setters
+}
+
+@AttributeOverrides
+Vấn đề là các trường của ta được gọi là những thứ như contactFirstName trong lớp
+Company ban đầu của ta và bây giờ là firstName trong lớp ContactPerson của chúng
+tôi . Vì vậy, JPA sẽ muốn ánh xạ những thứ này thành contact_first_name và 
+first_name, tương ứng.
+
+Tuy nhiên như hai lớp ở trên ta đều có cột điện thoại phone vì vậy ghi đè lên nó 
+sẽ trùng lặp
+
+Giải pháp ở đây là ta sử dụng @AttributeOverrides và @AttibuteOverride để ghi đè 
+các thuộc tính cột của kiểu embedded của ta.
+
+@Embedded
+@AttributeOverrides({
+  @AttributeOverride( name = "firstName", column = @Column(name = "contact_first_name")),
+  @AttributeOverride( name = "lastName", column = @Column(name = "contact_last_name")),
+  @AttributeOverride( name = "phone", column = @Column(name = "contact_phone"))
+})
+private ContactPerson contactPerson;
+
+@Builder
+@Builder annotation trong project lombok sẽ giúp chúng ta triển khai Builder pattern 
+mà không cần phải viết thêm bất kỳ đoạn code nào. @Builder có thể sử dụng trên class 
+hoặc method,
+
+@SequenceGenerator
+The SequenceGenerator annotation defines a primary key generator that may be 
+referenced by name when a generator element is specified for the GeneratedValue 
+annotation. A sequence generator may be specified on the entity class or on the 
+primary key field or property. The scope of the generator name is global to the 
+persistence unit (across all generator types).
+
