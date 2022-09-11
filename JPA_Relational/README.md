@@ -111,3 +111,5 @@ Khi sử dụng sequence-generator ta hoàn toàn có thể thay đổi lại b�
 dưới, ta yêu cầu giá trị ban đầu là 4 (@Parameter(name = “initial_value”, value = “4”).
 Và ta muốn mỗi lần tăng là 2 đơn vị @Parameter(name = “increment_size”, value = “2”). Như
 vậy giá trị của userId sẽ là : 4,6,8,10.
+
+==> Recommend develop along with this structure
