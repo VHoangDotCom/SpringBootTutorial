@@ -27,10 +27,10 @@ public class Course {
     @SequenceGenerator(
             name = "course_sequence",
             sequenceName = "course_sequence",
-            allocationSize = 1
+            allocationSize = 1 // => Han che truy van nhieu lan de lay Id Generate
     )
     @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
+            strategy = GenerationType.SEQUENCE, // Tao Sequence trong DB
             generator = "course_sequence"
     )
 
