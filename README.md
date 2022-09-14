@@ -37,3 +37,7 @@ soutv : System.out.println
 - Person ( Document )
 - ...
 4. Create es-settings.json file in static folder
+
+
+
+## Spring Security with JWT ( SpringSecurity )
