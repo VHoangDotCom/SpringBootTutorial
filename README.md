@@ -41,3 +41,7 @@ soutv : System.out.println
 
 
 ## Spring Security with JWT ( SpringSecurity )
+
+
+## Spring Send Mail( SendMail )
+
