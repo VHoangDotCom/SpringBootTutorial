@@ -7,3 +7,4 @@ select * from `userservice`.`role`;
 select * from `userservice`.`user`;
 
 select * from `userservice`.`user_roles`;
+
