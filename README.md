@@ -8,7 +8,7 @@ soutv : System.out.println
 
 
 
-## CRUD Basic - With MySQL ( CRUD_Basic)
+## CRUD Basic - With MySQL ( CRUD_Basic )
 
 
 
@@ -45,3 +45,24 @@ soutv : System.out.println
 
 ## Spring Send Mail( SendMail )
 
+
+## Spring Security Advanced ( SpringSecurityAdvanced )
+
+
+## OAuth2 Spring Security using Facebook ( )
+1. Create App in Facebook for developer ( https://developers.facebook.com/ )
+My Apps -> Enter App Name -> Facebook Login -> Others -> Dashboard -> Setting -> Save change
+
+
+## Deploy SpringBoot to AWS Elastic Beanstalk ( CRUD_Basic )
+1. Open CRUD_Basic project
+
+2. Check API in localhost again
+
+3. mvn clean install  in terminal
+=> Check folder target -> jar file
+
+4. Enter console.aws.amazon.com
+
+
+## Upload and Download file in Spring Boot ( UploadDownloadFile )
