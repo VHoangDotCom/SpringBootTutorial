@@ -33,3 +33,10 @@ spring.servlet.multipart.max-request-size=215MB
 - Upload File (Post) : http://localhost:8080/upload
   Body -> form-data -> Key:file -> Value:File-> Choose file
 - Download File (Get) : http://localhost:8080/download/{fileId}
+
+6. Export data to excel
+- Create Entity ( Customer + Address )
+- Create Excel Styling ( ExcelExportUtils )
+- Create Repository ( CustomerRepository )
+- Create Service ( CustomerService )
+- Create Seeding file ( CustomerSeeding )
