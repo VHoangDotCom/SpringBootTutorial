@@ -64,7 +64,7 @@ public class RegistrationController {
             userService.createPasswordResetTokenForUser(user, token);
             url = passwordResetTokenMail(user, applicationUrl(request), token);
         }
-        return url;
+        return ("Click the link to Reset your password: " + url);
     }
 
     @PostMapping ("/savePassword")

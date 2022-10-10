@@ -69,3 +69,8 @@ My Apps -> Enter App Name -> Facebook Login -> Others -> Dashboard -> Setting ->
 
 
 ## SpringBoot - ReactJS - Talwind CSS ( SpringBoot + React (Tailwind CSS) )
+
+
+## SpringBoot - Microservice ( )
+1. Create Project
+mvn archetype:generate -DgroupId=com.microservice -DartifactId=microservice -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false

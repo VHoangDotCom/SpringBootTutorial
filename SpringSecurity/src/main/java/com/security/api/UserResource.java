@@ -5,8 +5,10 @@ import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.security.domain.Attachment;
 import com.security.domain.Role;
 import com.security.domain.User;
+import com.security.service.AttachmentService;
 import com.security.service.UserService;
 
 import lombok.Data;
@@ -18,6 +20,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.MimeTypeUtils;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.servlet.http.HttpServletRequest;
@@ -33,14 +36,26 @@ import java.util.stream.Collectors;
 public class UserResource {
     private final UserService userService;
 
+    private final AttachmentService attachmentService;
+
     @GetMapping("/users")
     public ResponseEntity<List<User>> getUsers() {
         return ResponseEntity.ok().body(userService.getUsers());
     }
 
     @PostMapping("/user/save")
-    public ResponseEntity<User> saveUser(@RequestBody User user) {
+    public ResponseEntity<User> saveUser(@RequestBody User user, @RequestParam("file") MultipartFile file) throws Exception {
         URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/user/save").toUriString());
+        Attachment attachment = null;
+        String downloadURL = "";
+        attachment = attachmentService.saveAttachment(file);
+        downloadURL = ServletUriComponentsBuilder.fromCurrentContextPath()
+                .path("/download/")
+                .path(attachment.getAttachmentId())
+                .toUriString();
+
+        user.setAvatar(attachment);
+
         return ResponseEntity.created(uri).body(userService.saveUser(user));
     }
 
