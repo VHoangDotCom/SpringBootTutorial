@@ -1,5 +1,6 @@
 package com.security;
 
+import com.security.domain.Attachment;
 import com.security.domain.Role;
 import com.security.domain.User;
 import com.security.service.UserService;
@@ -32,10 +33,10 @@ public class SpringSecurityApplication {
             userService.saveRole(new Role(null, "ROLE_ADMIN"));
             userService.saveRole(new Role(null, "ROLE_SUPER_ADMIN"));
 
-            userService.saveUser(new User(null, "John Deep", "john", "1234", new ArrayList<>()));
-            userService.saveUser(new User(null, "Will Smith", "will", "1234", new ArrayList<>()));
-            userService.saveUser(new User(null, "Jim Carry", "jim", "1234", new ArrayList<>()));
-            userService.saveUser(new User(null, "Viet Hoang", "hoang", "hoang", new ArrayList<>()));
+            userService.saveUser(new User(null, "John Deep", "john", "1234",null,new ArrayList<>()));
+            userService.saveUser(new User(null, "Will Smith", "will", "1234",null, new ArrayList<>()));
+            userService.saveUser(new User(null, "Jim Carry", "jim", "1234",null, new ArrayList<>()));
+            userService.saveUser(new User(null, "viethoang2001gun@gmail.com", "hoang", "hoang",null, new ArrayList<>()));
 
             userService.addRoleToUser("john", "ROLE_USER");
             userService.addRoleToUser("will", "ROLE_MANAGER");

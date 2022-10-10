@@ -20,10 +20,10 @@ public class CustomerSeeding {
 
     private List<Customer> customers = Arrays.asList(
             new Customer("Viet", "Hoang", "vh@gmail.com", new Address("Japan", "some state", "Tokyo","Kyoto")),
-                    new Customer("Dai", "Huy", "fsd@gmail.com", new Address("Vietnam", "some state", "Tokyo","Kyoto")),
-                            new Customer("Nhu", "Jaika", "fds@gmail.com", new Address("USA", "some state", "Tokyo","Kyoto")),
-                                    new Customer("Thuy", "Jacobs", "gd@gmail.com", new Address("India", "some state", "Tokyo","Kyoto")),
-                                            new Customer("Hai", "Damn", "fd@gmail.com", new Address("Cuba", "some state", "Tokyo","Kyoto"))
+            new Customer("Dai", "Huy", "fsd@gmail.com", new Address("Vietnam", "some state", "Tokyo","Kyoto")),
+            new Customer("Nhu", "Jaika", "fds@gmail.com", new Address("USA", "some state", "Tokyo","Kyoto")),
+            new Customer("Thuy", "Jacobs", "gd@gmail.com", new Address("India", "some state", "Tokyo","Kyoto")),
+            new Customer("Hai", "Damn", "fd@gmail.com", new Address("Cuba", "some state", "Tokyo","Kyoto"))
     );
 
     @PostConstruct

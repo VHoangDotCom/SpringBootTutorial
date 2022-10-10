@@ -82,10 +82,10 @@ public class ExcelExportUtils {
             createCell(row, columnCount++, customer.getFirstName(), style);
             createCell(row, columnCount++, customer.getLastName(), style);
             createCell(row, columnCount++, customer.getEmail(), style);
-            createCell(row, columnCount++, customer.getAddress().getAddress(), style);
             createCell(row, columnCount++, customer.getAddress().getCountry(), style);
-            createCell(row, columnCount++, customer.getAddress().getCity(), style);
             createCell(row, columnCount++, customer.getAddress().getState(), style);
+            createCell(row, columnCount++, customer.getAddress().getCity(), style);
+            createCell(row, columnCount++, customer.getAddress().getAddress(), style);
         }
     }
 
