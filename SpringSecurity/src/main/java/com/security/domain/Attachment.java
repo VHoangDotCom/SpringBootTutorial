@@ -27,16 +27,16 @@ public class Attachment {
     @Lob
     private byte[] data;
 
-    @OneToOne(
-            cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY,
-            optional = false
-    )
-    @JoinColumn(
-            name = "user_id",
-            referencedColumnName = "id"
-    )
-    private User user;
+//    @OneToOne(
+//            cascade = CascadeType.ALL,
+//            fetch = FetchType.LAZY,
+//            optional = false
+//    )
+//    @JoinColumn(
+//            name = "user_id",
+//            referencedColumnName = "id"
+//    )
+//    private User user;
 
     public Attachment(String fileName, String fileType, byte[] data) {
         this.fileName = fileName;

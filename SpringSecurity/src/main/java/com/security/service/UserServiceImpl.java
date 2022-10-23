@@ -129,12 +129,7 @@ public class UserServiceImpl implements UserService, UserDetailsService{
                 throw new Exception("Filename contains invalid path sequence"
                         +fileName);
             }
-            Attachment attachment
-                    = new Attachment(fileName,
-                    file.getContentType(),
-                    file.getBytes());
-            attachmentRepository.save(attachment);
-            user.setAvatar(attachment);
+            user.setAvatar(file.getBytes());
             user.setPassword(passwordEncoder.encode(user.getPassword()));
         }catch (Exception ex) {
             throw new Exception("Could not save File: " + fileName);

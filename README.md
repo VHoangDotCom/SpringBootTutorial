@@ -74,3 +74,18 @@ My Apps -> Enter App Name -> Facebook Login -> Others -> Dashboard -> Setting ->
 ## SpringBoot - Microservice ( )
 1. Create Project
 mvn archetype:generate -DgroupId=com.microservice -DartifactId=microservice -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
+
+
+## SpringBoot - Paypal ( SpringPaypal )
+1. Dependencies
+- lombok
+- spring web
+- devtools
+- paypal SDK
+- thymleaf
+
+
+## SpringBoot - Google Login Oauth 2.0 ( SpringBoot_GoogleLogin )
+3. Dependencies
+- Spring web
+- OAuth2 Client
