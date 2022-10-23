@@ -3,6 +3,7 @@ package com.security.domain;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -19,10 +20,13 @@ public class User {
     private String username;
     private String password;
 
-   @OneToOne(
-           mappedBy = "user"
-   )
-   private Attachment avatar;
+//   @OneToOne(
+//           mappedBy = "user"
+//   )
+//   private Attachment avatar;
+
+    @Lob
+    private byte[] avatar;
 
     /*
     * FetchType.EAGER: When you load User table from database, it will automatically load Role table as well

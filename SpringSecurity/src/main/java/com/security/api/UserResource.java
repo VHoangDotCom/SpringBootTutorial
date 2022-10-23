@@ -46,17 +46,8 @@ public class UserResource {
     @PostMapping("/user/save")
     public ResponseEntity<User> saveUser(@RequestBody User user, @RequestParam("file") MultipartFile file) throws Exception {
         URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/user/save").toUriString());
-        Attachment attachment = null;
-        String downloadURL = "";
-        attachment = attachmentService.saveAttachment(file);
-        downloadURL = ServletUriComponentsBuilder.fromCurrentContextPath()
-                .path("/download/")
-                .path(attachment.getAttachmentId())
-                .toUriString();
 
-        user.setAvatar(attachment);
-
-        return ResponseEntity.created(uri).body(userService.saveUser(user));
+        return ResponseEntity.created(uri).body(userService.saveUserWithAttachment(user, file));
     }
 
     @PostMapping("/role/save")
