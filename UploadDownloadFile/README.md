@@ -40,3 +40,33 @@ spring.servlet.multipart.max-request-size=215MB
 - Create Repository ( CustomerRepository )
 - Create Service ( CustomerService )
 - Create Seeding file ( CustomerSeeding )
+
+7. Upload File to Cloudinary
+
+        <dependency>
+           <groupId>com.cloudinary</groupId>
+           <artifactId>cloudinary-http44</artifactId>
+           <version>1.29.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.cloudinary</groupId>
+            <artifactId>cloudinary-taglib</artifactId>
+            <version>1.29.0</version>
+        </dependency>
+
+         <!-- Apache Commons Upload -->
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.2.2</version>
+        </dependency>
+
+        <!-- Apache Commons Upload -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+
+8. Create ConfigFile
