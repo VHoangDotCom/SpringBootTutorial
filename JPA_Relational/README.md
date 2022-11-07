@@ -113,3 +113,34 @@ Và ta muốn mỗi lần tăng là 2 đơn vị @Parameter(name = “increment_
 vậy giá trị của userId sẽ là : 4,6,8,10.
 
 ==> Recommend develop along with this structure
+
+7. Tao Database ao tranh viec dong den Database that
+- Dependency (pom.xml)
+
+<dependency>
+<groupId>com.h2database</groupId>
+<artifactId>h2</artifactId>
+<scope>test</scope>
+</dependency>
+
+- Chuot phai test -> new -> Directory -> resources -> Them file application.properties
+
+- Config properties file
+  spring.datasource.url=jdbc:h2://mem:db:testdb;DB_CLOSE_DELAY=-1
+  spring.h2.console.enabled=true
+  spring.datasource.username=sa
+  spring.datasource.password=
+  spring.datasource.driver-class-name=org.h2.Driver
+
+logging.level.org.hibernate.SQL = debug
+
+// create, create-drop
+spring.jpa.hibernate.ddl-auto=create-drop
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+// Hibernate properties ( comment = # )
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
+
+8. Mockito
+- StudentService -> chuot phai -> Create New Test
+- Add @Disable truoc cac Test khong muon chay

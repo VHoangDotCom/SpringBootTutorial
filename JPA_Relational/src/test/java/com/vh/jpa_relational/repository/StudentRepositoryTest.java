@@ -2,9 +2,11 @@ package com.vh.jpa_relational.repository;
 
 import com.vh.jpa_relational.entity.Guardian;
 import com.vh.jpa_relational.entity.Student;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.jdbc.DataJdbcTest;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
@@ -12,6 +14,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
+@DataJpaTest
 class StudentRepositoryTest {
 
     @Autowired
@@ -29,6 +32,12 @@ class StudentRepositoryTest {
                 .build();
 
         studentRepository.save(student);
+    }
+
+    //After each test -> delete all
+    @AfterEach
+    void tearDown() {
+        studentRepository.deleteAll();
     }
 
     @Test

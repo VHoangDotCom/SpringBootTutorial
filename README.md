@@ -89,3 +89,9 @@ mvn archetype:generate -DgroupId=com.microservice -DartifactId=microservice -Dar
 3. Dependencies
 - Spring web
 - OAuth2 Client
+
+
+
+
+
+

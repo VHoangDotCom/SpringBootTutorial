@@ -55,4 +55,12 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
             nativeQuery = true
     )
     int updateStudentNameByEmailId(String firstName, String emailId);
+
+    @Query("" +
+            "SELECT CASE WHEN COUNT(s) > 0 THEN " +
+            "TRUE ELSE FALSE END " +
+            "FROM Student s " +
+            "WHERE s.emailId = ?1"
+    )
+    Boolean selectExistsEmail(String emailId);
 }
