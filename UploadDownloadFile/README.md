@@ -70,3 +70,5 @@ spring.servlet.multipart.max-request-size=215MB
         </dependency>
 
 8. Create ConfigFile
+
+9. Dump Data into Database
